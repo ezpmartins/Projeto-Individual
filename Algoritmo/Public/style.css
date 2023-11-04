@@ -1,0 +1,121 @@
+@font-face {
+    font-family: 'TLOU';
+    src: url('Assets/Fonts/The Last Of Us Rough.ttf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+}
+
+body {
+    margin: 0;
+    background-color: #000;
+    font-family: 'TLOU';
+}
+
+body img {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    z-index: -1;
+    opacity: 1;
+}
+
+.header {
+    background-color: transparent;
+    margin: 0px 0px 1px 0px;
+}
+
+.header .container {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .container ul.sections {
+    width: 700px;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-left: 170px;
+    justify-content: space-between;
+    color: #fff;
+}
+
+.container ul li {
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.header p {
+    font-family: 'TLOU';
+    color: #fff;
+    font-size: 30px;
+}
+
+.header a {
+    text-decoration: none;
+    color: #fdfdfd;
+    text-transform: none;
+    transition: 0.25s ease;
+}
+
+ul:hover a {
+    color: #fdfdfd;
+}
+
+ul:hover a:hover {
+    color: #fdfdfd;
+    box-shadow: 0 2px 0 0 currentColor;
+}
+
+.buttons {
+    width: 300px;
+    list-style: none;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    color: #fff;
+    font-family: 'TLOU';
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 50px;
+    height: 50px;
+    z-index: 1;
+    margin-left: -80px;
+    opacity: 1;
+}
+
+.logo:hover {
+    transition: 0.3s ease-in-out;
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.logotexto {
+    width: 80%;
+    margin: auto;
+    margin-top: 10px;
+    display: flex;
+    align-items: end;
+    margin-top: 50px;
+    color: #fff;
+    opacity: 0.5;
+    font-size: 150px;
+    font-family: 'TLOU';
+}
+
+.logotexto p:hover {
+    transition: 0.3s ease-in-out;
+    transform: scale(1.2);
+    cursor: pointer;
+}
