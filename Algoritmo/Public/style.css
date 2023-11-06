@@ -70,6 +70,11 @@ ul:hover a:hover {
     color: #fdfdfd;
     box-shadow: 0 2px 0 0 currentColor;
 }
+li:hover{
+    transition: 0.3s ease-in-out;
+    transform: scale(1.2);
+    cursor: pointer;
+}
 
 .buttons {
     width: 300px;
