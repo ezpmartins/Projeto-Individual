@@ -7,6 +7,7 @@
     <title>TLOU - Cadastro</title>
     <link rel="icon" href="Assets/Imgs/Logo.png" type="image/x-icon">
     <link rel="stylesheet" href="cadastro.css">
+    <script src="Validation.js" defer></script>
     <script src="https://cdn.lordicon.com/lordicon-1.2.0.js"></script>
 
 </head>
@@ -15,37 +16,37 @@
     <section>
         <div class="form-box">
             <div class="form-value">
-                <form action="">
+                <form id="form">
                     <h2>CADASTRE-SE</h2>
                     <div class="inputbox">
                         <lord-icon src="https://cdn.lordicon.com/hrjifpbq.json" trigger="hover"
                             colors="primary:#ffffff"></lord-icon>
-                        <input type="name" required>
+                        <input type="name" id="userName">
                         <label for="">Nome</label>
                     </div>
                     <div class="inputbox">
                         <lord-icon src="https://cdn.lordicon.com/xtzvywzp.json" trigger="hover"
                             colors="primary:#ffffff"></lord-icon>
-                        <input type="email" required>
+                        <input type="email" id="userEmail">
                         <label for="">Email</label>
                     </div>
                     <div class="inputbox">
                         <lord-icon src="https://cdn.lordicon.com/lomfljuq.json" trigger="hover"
                             colors="primary:#ffffff"></lord-icon>
-                        <input type="password" required>
+                        <input type="password" id="userPassword">
                         <label for="">Senha</label>
                     </div>
                     <div class="inputbox">
                         <lord-icon src="https://cdn.lordicon.com/lomfljuq.json" trigger="hover"
                             colors="primary:#ffffff"></lord-icon>
-                        <input type="password" required>
+                        <input type="password" id="userCheckPassword">
                         <label for=""> Confirmar Senha</label>
                     </div>
                     <div class="forget">
                         <label for=""><input type="checkbox">Lembrar de Mim &nbsp; <a href="index.html">Voltar a
                                 Home</a></label>
                     </div>
-                    <button>Cadastrar</button>
+                    <button onclick="cadastrar()">Cadastrar</button>
                     <div class="register">
                         <p>Já possui uma conta ? &nbsp;<a href="login.html">Entrar</a></p>
                     </div>
