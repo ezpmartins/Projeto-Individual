@@ -4,7 +4,7 @@ const emailInput = document.querySelector('#userEmail');
 const passwordInput = document.querySelector('#userPassword');
 const passwordCheckInput = document.querySelector('#userCheckPassword');
 
-console.log(form, nameInput, emailInput, passwordInput, passwordCheckInput)
+console.log(form, nameInput, emailInput, passwordInput, passwordCheckInput);
 
 form.addEventListener('submit', (event) => {
     event.preventDefault();

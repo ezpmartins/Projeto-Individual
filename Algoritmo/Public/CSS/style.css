@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'TLOU';
-    src: url('Assets/Fonts/The Last Of Us Rough.ttf') format('truetype');
+    src: url('../Assets/Fonts/The Last Of Us Rough.ttf') format('truetype');
     font-style: normal;
     font-weight: normal;
 }

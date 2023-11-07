@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'TLOU';
-    src: url('Assets/Fonts/The Last Of Us Rough.ttf') format('truetype');
+    src: url('../Assets/Fonts/The Last Of Us Rough.ttf') format('truetype');
     font-style: normal;
     font-weight: normal;
 }
@@ -15,18 +15,19 @@ body {
 
 section {
     display: flex;
-    justify-content: center;
+    justify-content: end;
     align-items: center;
     min-height: 100vh;
     width: 100%;
     background: #000;
-    background: url(Assets/Imgs/300864-The-Last-of-Us-Part-2-Ellie-Guitar-4K.jpg)no-repeat;
+    background: url(../Assets/Imgs/300864-The-Last-of-Us-Part-2-Ellie-Guitar-4K.jpg)no-repeat;
     background-position: center;
     background-size: cover;
 }
 
 .form-box {
-    position: relative;
+    position: absolute;
+    left: 7%;
     width: 500px;
     height: 600px;
     background: transparent;

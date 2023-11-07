@@ -5,7 +5,7 @@
     font-weight: normal;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('../https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 body {
     margin: 0;
@@ -20,13 +20,14 @@ section {
     min-height: 100vh;
     width: 100%;
     background: #000;
-    background: url(Assets/Imgs/885-3840x2160-desktop-4k-the-last-of-us-game-background.jpg)no-repeat;
+    background: url(../Assets/Imgs/885-3840x2160-desktop-4k-the-last-of-us-game-background.jpg)no-repeat;
     background-position: center;
     background-size: cover;
 }
 
 .form-box {
-    position: relative;
+    position: absolute;
+    right: 10%;
     width: 400px;
     height: 450px;
     background: transparent;
