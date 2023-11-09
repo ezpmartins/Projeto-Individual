@@ -124,3 +124,25 @@ li:hover{
     transform: scale(1.2);
     cursor: pointer;
 }
+/* #iconMusic{
+    display: flex;
+    position: absolute;
+    right: 200px;
+    bottom: 230px;
+    justify-content: end;
+    align-items:center;
+} */
+
+#iconMusic:hover{
+    transition: 0.3s ease-in-out;
+    transform: scale(1.2);
+    cursor: pointer;
+}
+.AudioMusic{
+    display: flex;
+    position: absolute;
+    right: 200px;
+    bottom: 230px;
+    justify-content: end;
+    align-items:center;
+}

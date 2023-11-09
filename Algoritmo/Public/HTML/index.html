@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Last of Us </title>
     <link rel="icon" href="../Assets/Imgs/Logo.png" type="image/x-icon">
-    <link rel="stylesheet"  href="../CSS/style.css">
-</head>
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
 
 <body>
     <img src="../Assets/Imgs/Background-image.jpeg">
@@ -43,8 +43,36 @@
             LAST <br>
             OF US
         </p>
-
+        <div class="AudioMusic">
+        <i id="iconMusic" class="fi fi-sr-music-note"></i>  
+        <audio id="audioPlayer" preload="auto">
+            <source src="../Assets/Audios/Tlou.mp3" type="audio/mpeg">
+            <source src="..Assets/Audios/Tlou.ogg" type="audio/ogg">
+        </audio>
+    </div>
     </div>
 </body>
 
 </html>
+<script>
+    const PlayPauseMusic = document.getElementById('iconMusic');
+    const audioPlayer = document.getElementById('audioPlayer');
+
+    PlayPauseMusic.addEventListener('click', function () {
+        if (audioPlayer.paused) {
+            audioPlayer.play();
+        } else {
+            audioPlayer.pause();
+        }
+    });
+    audioPlayer.addEventListener('ended', function () {
+    });
+
+    const rotateButton = document.getElementById('rotate-button');
+
+    rotateButton.addEventListener('click', function () {
+        this.classList.toggle('active');
+    });
+
+
+</script>
