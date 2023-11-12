@@ -9,9 +9,11 @@
     <link rel="stylesheet" href="../CSS/style.css">
     <link rel='stylesheet'
         href='https://cdn-uicons.flaticon.com/2.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+    <script src="../JS/script.js"></script>
 
 <body>
     <img src="../Assets/Imgs/Background-image.jpeg">
+
 
     <div class="header">
         <div class="container">
@@ -26,8 +28,8 @@
                 <li> <a href="#">HOME</a></li>
                 <li><a href="#">SERIE</a></li>
                 <li><a href="#">JOGO</a></li>
-                <li><a href="#">QUIZ</a></li>
                 <li><a href="#">PERSONAGENS</a></li>
+                <li><a href="#">QUIZ</a></li>
                 <li><a href="#">SOBRE</a></li>
             </ul>
 
@@ -38,23 +40,51 @@
 
         </div>
     </div>
+
+
     <div class="logotexto">
         <p>
             THE <br>
             LAST <br>
             OF US
         </p>
-        <div class="AudioMusic">
-            <i id="iconMusic" class="fi fi-sr-music-note"></i>
-            <audio id="audioPlayer" preload="auto">
-                <source src="../Assets/Audios/Tlou.mp3" type="audio/mpeg">
-                <source src="..Assets/Audios/Tlou.ogg" type="audio/ogg">
-            </audio>
+    </div>
+
+
+    <div class="AudioMusic">
+        <i id="iconMusic" class="fi fi-sr-music-note"></i>
+        <audio id="audioPlayer" preload="auto">
+            <source src="../Assets/Audios/Tlou.mp3" type="audio/mpeg">
+            <source src="..Assets/Audios/Tlou.ogg" type="audio/ogg">
+        </audio>
+    </div>
+
+
+    <div class="serie">
+        <div class="container">
+            <p id="title">
+                SERIE
+            </p>
+            <br><br><br>
+            <p id="text">
+                "The Last of Us" é uma série da HBO baseada nos jogos de videogame. Ela se passa em um mundo
+                pós-pandêmico, onde Joel e Ellie viajam em busca de uma cura para um vírus devastador. Ellie pode ser
+                imune, o que a torna crucial para a sobrevivência da humanidade. A série aborda temas de sobrevivência e
+                moralidade.
+            </p>
+            <div class="snipet-Ytb">
+                <img src="../Assets/Imgs/Life_The-Last-of-Us-serie-768x512.jpg"><br>
+                <span> Assista o trailer pelo YouTube </span><br>
+                <button>Clique Aqui ! </button>
+            </div>
         </div>
+       
+
     </div>
 </body>
 
 </html>
+
 <script>
     const PlayPauseMusic = document.getElementById('iconMusic');
     const audioPlayer = document.getElementById('audioPlayer');

@@ -4,6 +4,19 @@
     font-style: normal;
     font-weight: normal;
 }
+@font-face {
+    font-family: "Modern Sans";
+    src: url("../Assets/Fonts/ModernSans-Light.otf") format("opentype");
+    font-size: normal;
+    font-weight: normal;
+}
+
+@import url('../https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+/* html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 9.5vh;
+} */
 
 body {
     margin: 0;
@@ -16,7 +29,7 @@ body img {
     height: 100vh;
     position: absolute;
     z-index: -1;
-    opacity: 1;
+    opacity: 0.4;
 }
 
 .header {
@@ -70,7 +83,8 @@ ul:hover a:hover {
     color: #fdfdfd;
     box-shadow: 0 2px 0 0 currentColor;
 }
-li:hover{
+
+li:hover {
     transition: 0.3s ease-in-out;
     transform: scale(1.2);
     cursor: pointer;
@@ -124,25 +138,112 @@ li:hover{
     transform: scale(1.2);
     cursor: pointer;
 }
-/* #iconMusic{
-    display: flex;
-    position: absolute;
-    right: 200px;
-    bottom: 230px;
-    justify-content: end;
-    align-items:center;
-} */
 
-#iconMusic:hover{
+#iconMusic:hover {
     transition: 0.3s ease-in-out;
     transform: scale(1.2);
     cursor: pointer;
 }
-.AudioMusic{
+
+#iconMusic {
+    height: -500px;
+    width: -500x;
+    color: #fff;
+}
+
+.AudioMusic {
     display: flex;
     position: absolute;
     right: 200px;
     bottom: 230px;
     justify-content: end;
-    align-items:center;
+    align-items: center;
+}
+
+.serie{
+    width: 100vh;
+    height: 100vh;
+    position: absolute;
+}
+
+.serie .container {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.serie #title{
+    display: flex;
+    align-items:end;
+    justify-content: center;
+    margin: auto;
+    margin-top:300px;
+    color: #fff;
+    font-size: 130px;
+    font-family: "TLOU";
+}
+
+
+.serie #text{
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    margin-top: 500px;
+    color: #fff;
+    text-align: justify;
+    font-size: 30px;
+    font-family: "Modern Sans";
+    font-weight: bold;
+    font-style: italic;
+}
+
+.snipet-Ytb {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.snipet-Ytb img{
+    position: absolute;
+    right: -800px;
+    bottom: 10px;
+    width: 600px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    z-index: 1;
+    opacity: 0.6;
+}
+
+.snipet-Ytb span{
+    display: flex;
+    flex-direction: column-reverse;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-family: "Modern Sans";
+    font-style: italic;
+    font-weight: bold;    
+}
+
+.snipet-Ytb button{
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    background-color: #fff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
 }
