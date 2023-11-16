@@ -19,7 +19,23 @@
     scroll-padding-top: 9.5vh;
 } */
 
+html::-webkit-scrollbar {
+    width: 3px;
+    height: 3px;
+    /* A altura só é vista quando a rolagem é horizontal */
+}
+
+html::-webkit-scrollbar-track {
+    background: transparent;
+    padding: 2px;
+}
+
+html::-webkit-scrollbar-thumb {
+    background-color: #000;
+}
+
 body {
+    overflow-x: hidden;
     margin: 0;
     background-color: #000;
     font-family: 'TLOU';
@@ -117,7 +133,7 @@ li:hover {
 
 .logo:hover {
     transition: 0.3s ease-in-out;
-    transform: scale(1.2);
+    transform: scale(1.1);
     cursor: pointer;
 }
 
@@ -136,19 +152,18 @@ li:hover {
 
 .logotexto p:hover {
     transition: 0.3s ease-in-out;
-    transform: scale(1.2);
+    transform: scale(1.1);
     cursor: pointer;
 }
 
 #iconMusic:hover {
     transition: 0.3s ease-in-out;
-    transform: scale(1.2);
+    transform: scale(1.1);
     cursor: pointer;
 }
 
 #iconMusic {
-    height: -500px;
-    width: -500x;
+   font-size: 30px;
     color: #fff;
 }
 
@@ -201,6 +216,7 @@ li:hover {
     font-weight: bold;
     font-style: italic;
     margin-bottom: 250px;
+    line-height: 2.375rem;
 }
 
 .snipet-Ytb {
@@ -251,19 +267,19 @@ li:hover {
 
 #title:hover {
     transition: 0.3s ease-in-out;
-    transform: scale(1.2);
+    transform: scale(1.1);
     cursor: pointer;
 }
 
 .snipet-Ytb img:hover {
     transition: 0.3s ease-in-out;
-    transform: scale(1.2);
+    transform: scale(1.1);
     cursor: pointer;
 }
 
 .snipet-Ytb button:hover {
     transition: 0.3s ease-in-out;
-    transform: scale(1.2);
+    transform: scale(1.1);
     cursor: pointer;
     background-color: #fff;
     color: #000;
@@ -309,6 +325,7 @@ li:hover {
     font-weight: bold;
     font-style: italic;
     margin-bottom: 250px;
+    line-height: 2.375rem;
 }
 
 .snipet-Ytb-game {
@@ -325,6 +342,7 @@ li:hover {
     height: 400px;
     border-radius: 30px;
     margin-bottom: 100px;
+    opacity: 0.5;
 }
 
 .snipet-Ytb-game span {
@@ -364,13 +382,13 @@ li:hover {
 
 .snipet-Ytb-game img:hover {
     transition: 0.3s ease-in-out;
-    transform: scale(1.2);
+    transform: scale(1.1);
     cursor: pointer;
 }
 
 .snipet-Ytb-game button:hover {
     transition: 0.3s ease-in-out;
-    transform: scale(1.2);
+    transform: scale(1.1);
     cursor: pointer;
     background-color: #fff;
     color: #000;
@@ -470,7 +488,7 @@ button a {
 
 .personagens button:hover {
     transition: 0.3s ease-in-out;
-    transform: scale(1.2);
+    transform: scale(1.1);
     cursor: pointer;
     background-color: #fff;
     color: #000;
@@ -478,13 +496,13 @@ button a {
 
 .personagens img:hover {
     transition: 0.3s ease-in-out;
-    transform: scale(1.2);
+    transform: scale(1.1);
     cursor: pointer;
 }
 
 .personagens-secundary1 {
     width: 100%;
-    height: 800px;
+    height: 900px;
 }
 
 .personagens-secundary1 .container {
@@ -498,7 +516,7 @@ button a {
 
 .personagens-secundary2 {
     width: 100%;
-    height: 200px;
+    height: 400px;
 }
 
 .personagens-secundary2 .container {
@@ -584,8 +602,6 @@ button a {
     font-size: 1em;
     font-weight: bold;
     font-family: "Modern Sans";
-
-
 }
 
 .card-tommy,
@@ -612,7 +628,7 @@ button a {
 
 .personagens-secundary1 button:hover {
     transition: 0.3s ease-in-out;
-    transform: scale(1.2);
+    transform: scale(1.1);
     cursor: pointer;
     background-color: #fff;
     color: #000;
@@ -620,13 +636,13 @@ button a {
 
 .personagens-secundary1 img:hover {
     transition: 0.3s ease-in-out;
-    transform: scale(1.2);
+    transform: scale(1.1);
     cursor: pointer;
 }
 
 .personagens-secundary2 button:hover {
     transition: 0.3s ease-in-out;
-    transform: scale(1.2);
+    transform: scale(1.1);
     cursor: pointer;
     background-color: #fff;
     color: #000;
@@ -634,6 +650,229 @@ button a {
 
 .personagens-secundary2 img:hover {
     transition: 0.3s ease-in-out;
-    transform: scale(1.2);
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.quiz {
+    justify-content: center;
+    align-items: center;
+    background: #000;
+    background: url(../Assets/Imgs/tlou1bck.jpg) no-repeat;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    background-position: center;
+    background-size: cover;
+
+}
+
+.quiz .container {
+    width: 80%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.quiz-banner {
+    width: 100%;
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.quiz .quiz-banner span {
+    text-align: start;
+    color: #fff;
+    width: 100%;
+    font-size: 130px;
+    font-family: "TLOU";
+    margin: 0;
+}
+
+.quiz .quiz-banner p {
+    width: 50%;
+    color: #fff;
+    text-align: justify;
+    font-size: 26px;
+    font-family: "Modern Sans";
+    font-weight: bold;
+    font-style: italic;
+    margin-bottom: 250px;
+    line-height: 2.375rem;
+}
+
+.quiz-banner button {
+    width: 20%;
+    height: 70px;
+    border-radius: 50px;
+    border: 0x;
+    transition: 0.5s;
+    outline: 0;
+    color: #fff;
+    background-color: #000;
+    cursor: pointer;
+    font-size: 40px;
+    font-weight: bold;
+    font-family: "Modern Sans";
+    position: relative;
+    bottom: 170px;
+
+}
+
+.quiz-banner span:hover {
+    transition: 0.3s ease-in-out;
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.quiz-banner button:hover {
+    transition: 0.3s ease-in-out;
+    transform: scale(1.1);
+    cursor: pointer;
+    background-color: #fff;
+    color: #000;
+}
+
+.sobre {
+    background: #000;
+    background: url(../Assets/Imgs/bckgdoor.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 900px;
+}
+
+.sobre .container {
+    width: 80%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.autor {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.sobre-info {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.autor img {
+    border-radius: 50%;
+    width: 500px;
+    height: 500px;
+}
+
+.autor span {
+    color: #fff;
+    font-size: 40px;
+    font-family: "TLOU";
+    margin-bottom: 100px;
+}
+
+.sobre-info span {
+    color: #fff;
+    font-size: 130px;
+    font-family: "TLOU";
+}
+
+.sobre-info p {
+    color: #fff;
+    text-align: justify;
+    font-size: 26px;
+    font-family: "Modern Sans";
+    font-weight: bold;
+    font-style: italic;
+    margin-bottom: 250px;
+    line-height: 2.375rem;
+}
+
+.sobre .autor span:hover {
+    transition: 0.3s ease-in-out;
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.sobre-info span:hover {
+    transition: 0.3s ease-in-out;
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+}
+
+.footer {
+    width: 100%;
+    height: 150px;
+}
+
+.footer .container {
+    width: 80%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.content span {
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    font-size: 20px;
+    font-family: "Modern Sans";
+}
+
+.content i {
+    display: flex;
+    font-size: 30px;
+    color: #fff;
+    align-self: space-around;
+    flex-direction: row;
+}
+
+.content #github {
+    position: relative;
+    left: 100px
+}
+
+.content img {
+    display: flex;
+    justify-content: start;
+}
+
+.content i:hover {
+    transition: 0.3s ease-in-out;
+    transform: scale(1.3);
+    cursor: pointer;
+}
+.content img:hover {
+    transition: 0.3s ease-in-out;
+    transform: scale(1.3);
     cursor: pointer;
 }
