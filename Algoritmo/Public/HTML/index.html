@@ -15,9 +15,7 @@
 
 <body>
     <img class="Background-image" src="../Assets/Imgs/Background-image.jpeg">
-
-
-    <div class="header">
+    <div id="home" class="header">
         <div class="container">
             <div class="logo">
                 <img src="../Assets/Imgs/Logo.png">
@@ -27,12 +25,12 @@
             </div>
 
             <ul class="sections">
-                <li> <a href="#">HOME</a></li>
-                <li><a href="#">SERIE</a></li>
-                <li><a href="#">JOGO</a></li>
-                <li><a href="#">PERSONAGENS</a></li>
-                <li><a href="#">QUIZ</a></li>
-                <li><a href="#">SOBRE</a></li>
+                <li> <a href="#home">HOME</a></li>
+                <li><a href="#serie">SERIE</a></li>
+                <li><a href="#jogo">JOGO</a></li>
+                <li><a href="#personagens">PERSONAGENS</a></li>
+                <li><a href="#quiz">QUIZ</a></li>
+                <li><a href="#sobre">SOBRE</a></li>
             </ul>
 
             <ul class="buttons">
@@ -54,6 +52,7 @@
 
 
     <div class="AudioMusic">
+        <span>"CLique aqui para escutar a música tema do Jogo"</span>
         <i id="iconMusic" class="fi fi-sr-music-note"></i>
         <audio id="audioPlayer" preload="auto">
             <source src="../Assets/Audios/Tlou.mp3" type="audio/mpeg">
@@ -62,7 +61,7 @@
     </div>
 
 
-    <div class="serie">
+    <div id="serie" class="serie">
         <div class="container">
             <div class="serie-banner">
                 <p id="title">
@@ -87,7 +86,7 @@
     </div>
 
 
-    <div class="game">
+    <div id="jogo" class="game">
         <div class="container">
             <div class="game-banner">
                 <p id="game">
@@ -113,7 +112,7 @@
     </div>
 
 
-    <div class="personagens">
+    <div id="personagens" class="personagens">
         <div class="container">
             <div class="card-ellie">
                 <div class="card">
@@ -217,7 +216,7 @@
     </div>
 
 
-    <div class="quiz">
+    <div id="quiz" class="quiz">
         <div class="container">
             <div class="quiz-banner">
                 <span>QUIZ</span>
@@ -235,7 +234,7 @@
     </div>
 
 
-    <div class="sobre">
+    <div id="sobre" class="sobre">
         <div class="container">
             <div class="autor">
                 <img src="../Assets/Imgs/enzomartins.jpg" alt="Enzo Martins">
@@ -269,6 +268,20 @@
 </body>
 
 </html>
+
+<script type="text/javascript">
+    var lastScrollTop = 0;
+    home = document.getElementById("home")
+    window.addEventListener("scroll", function () {
+        var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        if (scrollTop > lastScrollTop) {
+            home.style.top = "50px";
+        } else {
+            home.style.top = "0px";
+        }
+        lastScrollTop = scrollTop;
+    })
+</script>
 
 <script>
     const PlayPauseMusic = document.getElementById('iconMusic');
