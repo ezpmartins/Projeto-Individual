@@ -188,7 +188,6 @@ li:hover {
 .serie {
     width: 100%;
     height: 900px;
-    background-image: linear-gradient(to bottom, #383232,#000);
 }
 
 .serie .container {

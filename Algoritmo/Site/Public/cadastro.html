@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TLOU - Cadastro</title>
-    <link rel="icon" href="../Assets/Imgs/Logo.png" type="image/x-icon">
-    <link rel="stylesheet" href="../CSS/cadastro.css">
+    <link rel="icon" href="../Public/Assets/Imgs/Logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../Public/CSS/cadastro.css">
     <!-- <script src="../JS/validation.js" defer></script> -->
     <script src="https://cdn.lordicon.com/lordicon-1.2.0.js"></script>
     <script src="../JS/sessao.js"></script>
@@ -44,7 +44,7 @@
                         <label for=""> Confirmar Senha</label>
                     </div>
                     <div class="forget">
-                        <label for=""><input type="checkbox">Lembrar de Mim &nbsp; <a href="../HTML/index.html">Voltar a
+                        <label for=""><input type="checkbox">Lembrar de Mim &nbsp; <a href="index.html">Voltar a
                                 Home</a></label>
                     </div>
                     <div class="card_erro" id="cardErro"> 
@@ -52,7 +52,7 @@
                     </div>
                     <button onclick="cadastrar()">Cadastrar</button>
                     <div class="register">
-                        <p>Já possui uma conta ? &nbsp;<a href="../HTML/login.html">Entrar</a></p>
+                        <p>Já possui uma conta ? &nbsp;<a href="login.html">Entrar</a></p>
                     </div>
                 </form>
             </div>
@@ -132,22 +132,28 @@
                 senhaServer: senhaVar
             }),
         })
-            .then(function (resposta) {
-                console.log("resposta: ", resposta);
-
+        .then(function (resposta) {
+            console.log("resposta: ", resposta);
+            window.open(login.html, '_blank');
+            
                 if (resposta.ok) {
                     cardErro.style.display = "block";
 
                     mensagem_erro.innerHTML =
                         "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
 
-                    setTimeout(() => {
-                        window.location = "login.html";
-                    }, "2000");
+
+                        console.log("Estou abrindo login")
+
+                    // setTimeout(() => {
+                    //     window.location.href = "login.html";
+                    // }, "2000");
 
                     limparFormulario();
                     finalizarAguardar();
                 } else {
+
+                    console.log("resposta falsa")
                     mensagem_erro.innerHTML =
                         "Cadastro não pode ser efetuado, porfavor verique os campos corretamente!";
                     throw "Houve um erro ao tentar realizar o cadastro!";
