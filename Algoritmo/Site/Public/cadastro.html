@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TLOU - Cadastro</title>
-    <link rel="icon" href="../Public/Assets/Imgs/Logo.png" type="image/x-icon">
-    <link rel="stylesheet" href="../Public/CSS/cadastro.css">
+    <link rel="icon" href="./Assets/Imgs/Logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="./CSS/cadastro.css">
     <!-- <script src="../JS/validation.js" defer></script> -->
     <script src="https://cdn.lordicon.com/lordicon-1.2.0.js"></script>
-    <script src="../JS/sessao.js"></script>
+    <script src="./JS/sessao.js"></script>
 
 </head>
 
@@ -64,7 +64,7 @@
 </html>
 <script>
     function cadastrar() {
-        // aguardar();
+        aguardar();
 
         //Recupere o valor da nova input pelo nome do id
         // Agora vá para o método fetch logo abaixo
@@ -134,7 +134,7 @@
         })
         .then(function (resposta) {
             console.log("resposta: ", resposta);
-            window.open(login.html, '_blank');
+            console.log("teste");
             
                 if (resposta.ok) {
                     cardErro.style.display = "block";
@@ -145,9 +145,9 @@
 
                         console.log("Estou abrindo login")
 
-                    // setTimeout(() => {
-                    //     window.location.href = "login.html";
-                    // }, "2000");
+                    setTimeout(() => {
+                        window.location = "../login.html";
+                    }, "2000");
 
                     limparFormulario();
                     finalizarAguardar();

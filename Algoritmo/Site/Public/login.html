@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TLOU - Login</title>
-    <link rel="icon" href="../Public/Assets/Imgs/Logo.png" type="image/x-icon">
-    <link rel="stylesheet" href="../Public/CSS/login.css">
+    <link rel="icon" href="./Assets/Imgs/Logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="./CSS/login.css">
     <script src="https://cdn.lordicon.com/lordicon-1.2.0.js"></script>
-    <script src="../JS/sessao.js"></script>
+    <script src="./JS/sessao.js"></script>
 
 </head>
 
@@ -34,7 +34,7 @@
                         <label for=""><input type="checkbox">Lembrar de Mim &nbsp;
                             <a href="#">Esqueceu a Senha</a></label>
                     </div>
-                    <button>Entrar</button>
+                    <button onclick="entrar()">Entrar</button>
                     <div class="register">
                         <p>Ainda não tem conta ? &nbsp;<a href="cadastro.html">Cadastre-se</a></p>
                     </div>
@@ -51,7 +51,6 @@
 
 
     function entrar() {
-        aguardar();
 
         var emailVar = userEmail.value;
         var senhaVar = userPassword.value;
@@ -59,7 +58,6 @@
         if (emailVar == "" || senhaVar == "") {
             cardErro.style.display = "block"
             mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
-            finalizarAguardar();
             return false;
         }
         else {
@@ -89,10 +87,10 @@
                     console.log(JSON.stringify(json));
                     sessionStorage.EMAIL_USUARIO = json.email;
                     sessionStorage.NOME_USUARIO = json.nome;
-                    sessionStorage.ID_USUARIO = json.id;
+                    // sessionStorage.ID_USUARIO = json.id;
 
                     setTimeout(function () {
-                        window.location = "./dashboard/cards.html";
+                        window.location = "./dashboard.html";
                     }, 1000); // apenas para exibir o loading
 
                 });

@@ -103,9 +103,12 @@ a:hover {
     max-width: 55em;
     margin-right: auto;
     margin-left: auto;
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 1em;
     padding-top: 2em;
+    background-color: red;
 }
 
 .description{
