@@ -69,14 +69,16 @@ function cadastrar(req, res) {
     } else if (senha == undefined) {
         res.status(400).send("Sua senha está undefined!");
     } else if (senha.length < 6) {
-        res.status(400).send("Sua senha não é valida");
+        
     } else {
-
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
         usuarioModel.cadastrar(nome, email, senha)
             .then(
                 function (resultado) {
+                    // res.status(200);  // -- Redireciona para o Login.html
                     res.json(resultado);
+
+
                 }
             ).catch(
                 function (erro) {
