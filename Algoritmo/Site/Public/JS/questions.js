@@ -172,7 +172,7 @@ function finalizarQuiz() {
             <div class="exibirAcertos">
                 ${pontuation}
             </div>
-            <button onclick="sair()">Voltar para Home</button>
+            <button onclick="sair()">Voltar</button>
         `
     )
 }

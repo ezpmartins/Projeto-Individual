@@ -2,103 +2,87 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TLOU - Cadastro</title>
-    <link rel="icon" href="Assets/Imgs/Logo.png" type="image/x-icon">
-    <link rel="stylesheet" href="CSS/cadastro.css">
-    <!-- <script src="../JS/validation.js" defer></script> -->
-    <script src="https://cdn.lordicon.com/lordicon-1.2.0.js"></script>
-    <script src="JS/sessao.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TLOU - Cadastro</title>
+  <link rel="icon" href="Assets/Imgs/Logo.png" type="image/x-icon">
+  <link rel="stylesheet" href="CSS/cadastro.css">
+  <!-- <script src="../JS/validation.js" defer></script> -->
+  <script src="https://cdn.lordicon.com/lordicon-1.2.0.js"></script>
+  <script src="JS/sessao.js"></script>
 
 </head>
 
 <body>
-    <section>
-        <div class="form-box">
-            <div class="form-value">
-                    <h2>CADASTRE-SE</h2>
-                    <div class="inputbox">
-                        <lord-icon src="https://cdn.lordicon.com/hrjifpbq.json" trigger="hover"
-                            colors="primary:#ffffff"></lord-icon>
-                        <input type="name" id="userName">
-                        <label for="">Nome</label>
-                    </div>
-                    <div class="inputbox">
-                        <lord-icon src="https://cdn.lordicon.com/xtzvywzp.json" trigger="hover"
-                            colors="primary:#ffffff"></lord-icon>
-                        <input type="email" id="userEmail">
-                        <label for="">Email</label>
-                    </div>
-                    <div class="inputbox">
-                        <lord-icon src="https://cdn.lordicon.com/lomfljuq.json" trigger="hover"
-                            colors="primary:#ffffff"></lord-icon>
-                        <input type="password" id="userPassword">
-                        <label for="">Senha</label>
-                    </div>
-                    <div class="inputbox">
-                        <lord-icon src="https://cdn.lordicon.com/lomfljuq.json" trigger="hover"
-                            colors="primary:#ffffff"></lord-icon>
-                        <input type="password" id="userCheckPassword">
-                        <label for=""> Confirmar Senha</label>
-                    </div>
-                    <div class="forget">
-                        <label for=""><input type="checkbox">Lembrar de Mim &nbsp; <a href="index.html">Voltar a
-                                Home</a></label>
-                    </div>
-                    <button onclick="cadastrar()">Cadastrar</button>
-                    <div class="register">
-                        <p>Já possui uma conta ? &nbsp;<a href="login.html">Entrar</a></p>
-                    </div>
-            </div>
+  <section>
+    <div class="form-box">
+      <div class="form-value">
+        <h2>CADASTRE-SE</h2>
+        <div class="inputbox">
+          <lord-icon src="https://cdn.lordicon.com/hrjifpbq.json" trigger="hover" colors="primary:#ffffff"></lord-icon>
+          <input type="name" id="userName">
+          <label for="">Nome</label>
         </div>
-    </section>
+        <div class="inputbox">
+          <lord-icon src="https://cdn.lordicon.com/xtzvywzp.json" trigger="hover" colors="primary:#ffffff"></lord-icon>
+          <input type="email" id="userEmail">
+          <label for="">Email</label>
+        </div>
+        <div class="inputbox">
+          <lord-icon src="https://cdn.lordicon.com/lomfljuq.json" trigger="hover" colors="primary:#ffffff"></lord-icon>
+          <input type="password" id="userPassword">
+          <label for="">Senha</label>
+        </div>
+        <div class="inputbox">
+          <lord-icon src="https://cdn.lordicon.com/lomfljuq.json" trigger="hover" colors="primary:#ffffff"></lord-icon>
+          <input type="password" id="userCheckPassword">
+          <label for=""> Confirmar Senha</label>
+        </div>
+        <div class="forget">
+          <label for=""><input type="checkbox">Lembrar de Mim &nbsp; <a href="index.html">Voltar a
+              Home</a></label>
+        </div>
+        <button onclick="cadastrar()">Cadastrar</button>
+        <div class="register">
+          <p>Já possui uma conta ? &nbsp;<a href="login.html">Entrar</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
 
 </body>
 
 </html>
 
 <script>
-    function cadastrar() {
+  function cadastrar() {
     //   aguardar();
-  
-      //Recupere o valor da nova input pelo nome do id
-      // Agora vá para o método fetch logo abaixo
-      var nomeVar = userName.value;
-    //   var cpfVar = cpf_input.value;
-      var emailVar = userEmail.value;
-      var senhaVar = userPassword.value;
-      var confirmacaoSenhaVar = userCheckPassword.value;
-    //   var empresaVar = listaEmpresas.value
-      if (
-        nomeVar == "" ||
-        emailVar == "" ||
-        senhaVar == "" ||
-        confirmacaoSenhaVar == "" 
-      ) {
-        // cardErro.style.display = "block";
-        // mensagem_erro.innerHTML =
-         alert("Mensagem de erro para todos os campos em branco") ;
 
-      } else if (nomeVar.length < 1) {
-        // cardErro.style.display = "block";
-        // mensagem_erro.innerHTML =
-           alert("Seu Nome não valido, por favor preencha o campo corretamente!");
-  
-      } else if (emailVar.indexOf('@') == -1 || emailVar.indexOf('.') == -1) {
-        // cardErro.style.display = "block";
-        // mensagem_erro.innerHTML =
-           alert("Seu email está invalido, por favor verifique corretamente !");
-      } else if (senhaVar.length < 6) {
-        // cardErro.style.display = "block";
-        // mensagem_erro.innerHTML =
-           alert("Sua senha está invalido, por favor verifique corretamente !");
-      } else if (confirmacaoSenhaVar != senhaVar) {
-        // cardErro.style.display = "block";
-        // mensagem_erro.innerHTML =
-           alert("Suas senhas não se cofirmam, por favor verifique corretamente !");
-      }
-  
+    //Recupere o valor da nova input pelo nome do id
+    // Agora vá para o método fetch logo abaixo
+    var nomeVar = userName.value;
+    var emailVar = userEmail.value;
+    var senhaVar = userPassword.value;
+    var confirmacaoSenhaVar = userCheckPassword.value;
+    if (
+      nomeVar == "" ||
+      emailVar == "" ||
+      senhaVar == "" ||
+      confirmacaoSenhaVar == ""
+    ) {
+      alert("Mensagem de erro para todos os campos em branco");
+
+    } else if (nomeVar.length < 1) {
+      alert("Seu Nome não valido, por favor preencha o campo corretamente!");
+
+    } else if (emailVar.indexOf('@') == -1 || emailVar.indexOf('.') == -1) {
+      alert("Seu email está invalido, por favor verifique corretamente !");
+    } else if (senhaVar.length < 6) {
+      alert("Sua senha está invalido, por favor verifique corretamente !");
+    } else if (confirmacaoSenhaVar != senhaVar) {
+      alert("Suas senhas não se cofirmam, por favor verifique corretamente !");
+    }
+    else {
       // Enviando o valor da nova input
       fetch("/usuarios/cadastrar", {
         method: "POST",
@@ -115,23 +99,24 @@
       })
         .then(function (resposta) {
           console.log("resposta: ", resposta);
-  
+
           if (resposta.ok) {
             setTimeout(() => {
-             window.location = "login.html";
-             res.status(200); 
-           }, 1000);
+              window.location = "login.html";
+              res.status(200);
+            }, 1000);
 
-               alert("Cadastro realizado com sucesso! Redirecionando para tela de Login...");
-  
+            alert("Cadastro realizado com sucesso! Redirecionando para tela de Login...");
+
           } else {
-               alert("Cadastro não pode ser efetuado, porfavor verique os campos corretamente!");
+            alert("Cadastro não pode ser efetuado, porfavor verique os campos corretamente!");
             throw "Houve um erro ao tentar realizar o cadastro!";
           }
         })
         .catch(function (resposta) {
           console.log(`#ERRO: ${resposta}`);
         });
-        return false;
+      return false;
     }
-  </script>
+  }    
+</script>

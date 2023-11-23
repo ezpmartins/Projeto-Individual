@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TLOU - Login</title>
-    <link rel="icon" href="./Assets/Imgs/Logo.png" type="image/x-icon">
-    <link rel="stylesheet" href="./CSS/login.css">
+    <link rel="icon" href="Assets/Imgs/Logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="CSS/login.css">
     <script src="https://cdn.lordicon.com/lordicon-1.2.0.js"></script>
-    <script src="./JS/sessao.js"></script>
+    <script src="JS/sessao.js"></script>
 
 </head>
 
@@ -16,100 +16,86 @@
     <section>
         <div class="form-box">
             <div class="form-value">
-                <form id="form">
-                    <h2>LOGIN</h2>
-                    <div class="inputbox">
-                        <lord-icon src="https://cdn.lordicon.com/xtzvywzp.json" trigger="hover"
-                            colors="primary:#ffffff"></lord-icon>
-                        <input type="email" id="userEmail" required>
-                        <label for="">Email</label>
-                    </div>
-                    <div class="inputbox">
-                        <lord-icon src="https://cdn.lordicon.com/lomfljuq.json" trigger="hover"
-                            colors="primary:#ffffff"></lord-icon>
-                        <input type="password" id="userPassword" required>
-                        <label for="">Senha</label>
-                    </div>
-                    <div class="forget">
-                        <label for=""><input type="checkbox">Lembrar de Mim &nbsp;
-                            <a href="#">Esqueceu a Senha</a></label>
-                    </div>
-                    <button onclick="entrar()">Entrar</button>
-                    <div class="register">
-                        <p>Ainda não tem conta ? &nbsp;<a href="cadastro.html">Cadastre-se</a></p>
-                    </div>
-                </form>
+                <h2>LOGIN</h2>
+                <div class="inputbox">
+                    <lord-icon src="https://cdn.lordicon.com/xtzvywzp.json" trigger="hover"
+                        colors="primary:#ffffff"></lord-icon>
+                    <input type="email" id="userEmail" required>
+                    <label for="">Email</label>
+                </div>
+                <div class="inputbox">
+                    <lord-icon src="https://cdn.lordicon.com/lomfljuq.json" trigger="hover"
+                        colors="primary:#ffffff"></lord-icon>
+                    <input type="password" id="userPassword" required>
+                    <label for="">Senha</label>
+                </div>
+                <div class="forget">
+                    <label for=""><input type="checkbox">Lembrar de Mim &nbsp;
+                        <a href="#">Esqueceu a Senha</a></label>
+                </div>
+                <button onclick="entrar()">Entrar</button>
+                <div class="register">
+                    <p>Ainda não tem conta ? &nbsp;<a href="cadastro.html">Cadastre-se</a></p>
+                </div>
             </div>
         </div>
-        <div id="div_erros_login"></div>
     </section>
 
 </body>
 
 </html>
 <script>
-
-
     function entrar() {
-
         var emailVar = userEmail.value;
         var senhaVar = userPassword.value;
-
         if (emailVar == "" || senhaVar == "") {
-            alert("Mensagem de erro para todos os campos em branco");
+            alert("Preencha todos os campos");
+            return false;
+        } else {
+
+            console.log("FORM LOGIN: ", emailVar);
+            console.log("FORM SENHA: ", senhaVar);
+
+            fetch("/usuarios/autenticar", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    emailServer: emailVar,
+                    senhaServer: senhaVar
+                })
+            }).then(function (resposta) {
+                console.log("ESTOU NO THEN DO entrar()!")
+
+                if (resposta.ok) {
+                    console.log(resposta);
+
+                    resposta.json().then(json => {
+                        console.log(json);
+                        console.log(JSON.stringify(json));
+                        sessionStorage.EMAIL_USUARIO = json.email;
+                        sessionStorage.NOME_USUARIO = json.nome;
+                        sessionStorage.ID_USUARIO = json.idUsuario;
+                    });
+                    setTimeout(() => {
+                        window.location = "dashboard.html";
+                    }, 1000); // apenas para exibir o loading
+                    alert("Cadastro realizado com sucesso! Redirecionando para tela de Login...");
+                } else {
+
+                    console.log("Houve um erro ao tentar realizar o login!");
+
+                    resposta.text().then(texto => {
+                        console.error(texto);
+                    });
+                }
+
+            }).catch(function (erro) {
+                console.log(erro);
+            })
+
             return false;
         }
-        else {
-            setInterval(sumirMensagem, 5000)
-        }
-        console.log("FORM LOGIN: ", emailVar);
-        console.log("FORM SENHA: ", senhaVar);
-
-        fetch("/usuarios/autenticar", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                emailServer: emailVar,
-                senhaServer: senhaVar
-            })
-        }).then(function (resposta) {
-            console.log("ESTOU NO THEN DO entrar()!")
-
-            if (resposta.ok) {
-                console.log(resposta);
-
-                resposta.json().then(json => {
-                    console.log(json);
-                    console.log(JSON.stringify(json));
-                    sessionStorage.EMAIL_USUARIO = json.email;
-                    sessionStorage.NOME_USUARIO = json.nome;
-                    // sessionStorage.ID_USUARIO = json.id;
-                });
-                setTimeout(function () {
-                    window.location = "./dashboard.html";
-                }, 1000); // apenas para exibir o loading
-
-            } else {
-
-                console.log("Houve um erro ao tentar realizar o login!");
-
-                resposta.text().then(texto => {
-                    console.error(texto);
-                    finalizarAguardar(texto);
-                });
-            }
-
-        }).catch(function (erro) {
-            console.log(erro);
-        })
-
-        return false;
     }
-
-    function sumirMensagem() {
-        cardErro.style.display = "none"
-    }
-
 </script>
