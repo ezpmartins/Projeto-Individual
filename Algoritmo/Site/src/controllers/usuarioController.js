@@ -58,22 +58,16 @@ function cadastrar(req, res) {
     // Faça as validações dos valores
     if (nome == undefined) {
         res.status(400).send("Seu nome está undefined!");
-    } else if (nome.length < 1) {
-        res.status(400).send("Seu nome não é valido");
     } else if (email == undefined) {
         res.status(400).send("Seu email está undefined!");
-    } else if (email.indexOf('@') == -1 || email.indexOf('.') == -1) {
-        res.status(400).send("Seu email não é valido, precisa conter um '@' e'.' ");
     } else if (senha == undefined) {
         res.status(400).send("Sua senha está undefined!");
-    } else if (senha.length < 6) {
-
     } else {
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
         usuarioModel.cadastrar(nome, email, senha)
             .then(
                 function (resultado) {
-                    res.status(200);  // -- Redireciona para o Login.html
+                    // res.status(200);  // -- Redireciona para o Login.html
                     res.json(resultado);
                 }
             ).catch(
