@@ -75,7 +75,7 @@ function cadastrar(req, res) {
         usuarioModel.cadastrar(nome, email, senha)
             .then(
                 function (resultado) {
-                    // res.status(200);  // -- Redireciona para o Login.html
+                    res.status(200);  // -- Redireciona para o Login.html
                     res.json(resultado);
 
 
