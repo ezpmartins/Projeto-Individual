@@ -1,0 +1,112 @@
+@import url('../https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    place-items: center;
+    padding: 1rem;
+    background-color: red;
+    font-family: "Poppins", sans-serif;
+    background:url(../Algoritmo/Site/Public/Assets/Imgs/espingarda.jpg) no-repeat;
+}
+.contactForm{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: yellowgreen;
+    width: 50%;
+    height: 70%;
+    border: none ;
+    border-radius: 50px;
+    margin-left: 450px;
+    text-align: center;
+}
+.sub-heading h1{
+    display: flex;
+    text-align: center;
+    
+}
+.sub-heading{
+    font-size: 30px;
+    color: #fff;
+}
+p{
+    display: flex;
+    text-align: center; 
+    font-size: 20px;
+    color: #fff;
+}
+input,textarea{
+    border: #000;
+border-radius: 50px;}
+
+
+/* section {
+    width: 100%;
+    max-width: 30rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+} */
+
+label,
+input,
+textarea,
+button {
+    display:flex;
+}
+
+input,
+textarea,
+button{
+    width: 100%;
+    font: inherit;
+    padding: 1.25rem;
+    font-weight: 700;
+}
+input,
+textarea{
+    margin-bottom: 1rem;
+    color: #fff;
+    background: #fff;
+    border: 0.125rem solid transparent;
+    border: 1.125rem;
+    transition: border-color 0.3s;
+    box-shadow: 0.3s;
+}
+
+
+
+
+textarea{
+    align-self: center;
+    min-height: 12.5rem;
+    resize: vertical;
+}
+button{
+    border: none;
+    border-radius: 99px;
+    color:#000;
+    background: #fff;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+
+.register p a:hover {
+    text-decoration: underline;
+
+}
+
+textarea{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 120px; ;
+}
