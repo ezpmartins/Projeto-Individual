@@ -121,6 +121,14 @@ button {
     font-weight: 600;
 }
 
+button:hover {
+    transition: 0.3s ease-in-out;
+    transform: scale(1.1);
+    cursor: pointer;
+    background-color:#000;
+    color: #fff;
+}
+
 .register {
     font-size: .9em;
     color: #fff;
