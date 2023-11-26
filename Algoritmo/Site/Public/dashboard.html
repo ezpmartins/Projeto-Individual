@@ -14,7 +14,8 @@
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.0.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
     <link rel='stylesheet'
         href='https://cdn-uicons.flaticon.com/2.0.0/uicons-solid-straight/css/uicons-solid-straight.css'>
-        <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/2.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
 
 </head>
 
@@ -33,7 +34,7 @@
                 </a></li>
             <li><a href="#">
                     <i class="fi fi-sr-user"></i>
-                    <span class="nav-item">Olá, user</span>
+                    <span id="userName" class="nav-item">Olá,user</span>
                 </a></li>
             <li><a href="sugestoes.html">
                     <i class="fi fi-sr-envelope"></i>
@@ -58,7 +59,7 @@
         <div class="card">
             <i class="fi fi-sr-user"></i>
             <span>Quantidade de Usuários Cadastrados</span>
-            <p>#</p>
+            <p id="qtd_Usuarios">#</p>
         </div>
         <div class="card">
             <i id="check" class="fi fi-ss-social-network"></i>
@@ -76,7 +77,7 @@
             <p>#</p>
         </div>
     </div>
-    
+
     <div class="leaderboard">
         <div class="description"><br>
             <h3>Ranking</h3><br>
@@ -170,4 +171,42 @@
             }
         }
     }
+</script>
+
+<script>
+    userName.innerHTML = ` Olá,  ` + sessionStorage.NOME_USUARIO;
+    var qtdUsuarios = document.getElementById("qtd_Usuarios");
+    var id = sessionStorage.ID_USUARIO;
+    var qtdTotal = 0;
+    console.log(id);
+
+    setInterval(gerarGraficos, 3000);
+    function gerarGraficos() {
+
+        fetch(`/leaderboard/coletarQtdUsuarios?idUsuario=${id}`,
+    {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                }
+            })
+    
+    .then(res => {
+                if (!res.ok) {
+                    throw new Error(`Erro na solicitação: ${res.statusText}`);
+                }
+                return res.json();
+            })
+                .then(res => {
+                    qtdTotal = res[0].usuariosTotal;
+
+                    qtdUsuarios.innerHTML = `
+            ${qtdTotal}
+        `;
+                })
+                .catch(error => {
+                    console.error("Erro no lado do cliente:", error);
+                });
+    }
+
 </script>

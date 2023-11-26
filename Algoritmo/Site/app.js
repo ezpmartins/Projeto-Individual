@@ -8,12 +8,10 @@ var PORTA = process.env.AMBIENTE_PROCESSO == "desenvolvimento" ? 3333 : 8080;
 
 var app = express();
 
-var indexRouter = require("./src/routes/index");
+// var indexRouter = require("./src/routes/index");
 var usuarioRouter = require("./src/routes/usuarios");
-// var avisosRouter = require("./src/routes/avisos");
-// var medidasRouter = require("./src/routes/medidas");
-// var aquariosRouter = require("./src/routes/aquarios");
-// var empresasRouter = require("./src/routes/empresas");
+var leaderboardRouter = require("./src/routes/leaderboard");
+
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -22,8 +20,9 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(cors());
 
 
-app.use("/", indexRouter);
+// app.use("/", indexRouter);
 app.use("/usuarios", usuarioRouter);
+app.use("/leaderboard",leaderboardRouter);
 // app.use("/avisos", avisosRouter);
 // app.use("/medidas", medidasRouter);
 // app.use("/aquarios", aquariosRouter);
