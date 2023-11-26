@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perfil - TLOU</title>
+    <title>TLOU - Perfil </title>
     <link rel="icon" href="Assets/Imgs/Logo.png" type="image/x-icon">
     <link rel="stylesheet" href="CSS/dashboard.css">
     <link rel='stylesheet'
@@ -12,6 +12,9 @@
     <link rel='stylesheet'
         href='https://cdn-uicons.flaticon.com/2.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.0.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/2.0.0/uicons-solid-straight/css/uicons-solid-straight.css'>
+        <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
 
 </head>
 
@@ -30,7 +33,7 @@
                 </a></li>
             <li><a href="#">
                     <i class="fi fi-sr-user"></i>
-                    <span class="nav-item">Perfil</span>
+                    <span class="nav-item">Olá, user</span>
                 </a></li>
             <li><a href="sugestoes.html">
                     <i class="fi fi-sr-envelope"></i>
@@ -50,10 +53,34 @@
                 </a></li>
         </ul>
     </nav>
+
+    <div class="kpis">
+        <div class="card">
+            <i class="fi fi-sr-user"></i>
+            <span>Quantidade de Usuários Cadastrados</span>
+            <p>#</p>
+        </div>
+        <div class="card">
+            <i id="check" class="fi fi-ss-social-network"></i>
+            <span>Quantidade de Usuários Acima da Média</span>
+            <p>#</p>
+        </div>
+        <div class="card">
+            <i id="uncheck" class="fi fi-ss-hand"></i>
+            <span>Quantidade de Usuários Abaixo da Média</span>
+            <p>#</p>
+        </div>
+        <div class="card">
+            <i id="medal" class="fi fi-sr-badge"></i>
+            <span>Usuários com 100% de Taxa de Acerto</span>
+            <p>#</p>
+        </div>
+    </div>
+    
     <div class="leaderboard">
-        <div class="description">
-            <h3>Ranking</h3>
-            <p>Veja o Ranking dos Usuarios que acessaram o site</p>
+        <div class="description"><br>
+            <h3>Ranking</h3><br>
+            <p>Veja o Ranking dos Usuarios que acessaram o site</p><br>
             <input class="search" placeholder="Pesquisar" id="search" oninput="search()">
             <table>
                 <thead>
@@ -120,6 +147,9 @@
             </table>
         </div>
     </div>
+    <div class="background-image">
+        <img src="Assets/Imgs/imagem_2023-11-25_180532540-removebg-preview.png" alt="Borboleta-Ellie">
+    </div>
 
 </body>
 
@@ -127,7 +157,7 @@
 <script>
     function search() {
         var text = document.getElementById("search").value;
-        const tr = document.getElementsByTagName("tr");
+        const tr = document.getElementsByTagName("tr").value;
         for (let i = 1; i < tr.length; i++) {
             if (!tr[i].children[1].children[1].innerHTML.toLowerCase().includes(
                 text.toLowerCase()

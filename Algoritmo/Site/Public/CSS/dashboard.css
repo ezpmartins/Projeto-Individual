@@ -16,6 +16,8 @@
 }
 
 body {
+    overflow-y: hidden;
+    overflow-x: hidden;
     background: #cfcfcf;
 }
 
@@ -28,7 +30,6 @@ nav {
     background: #000;
     width: 90px;
     overflow: hidden;
-    /* transition: width 0.2s linear; */
     width: 280px;
     box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
 }
@@ -89,26 +90,58 @@ a:hover {
     background: #141414;
 }
 
-/* nav:hover {
-    width: 280px;
-    transition: all 0.5 ease;
-} */
-
 .logout {
     position: absolute;
     bottom: 2px;
 }
+.kpis{
+    display: flex;
+    max-width: 80%;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: 330px;
+    padding-top: 10px;
+}
+.card{
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 40px;
+    width: 1000px;
+    height: 100px;
+    flex-direction: column;
+    color: #fff;
+    
+}
+.card:hover{
+    transition: 0.3s ease-in-out;
+    transform: scale(1.1);
+    cursor: pointer;
+}
+#check{
+    color: green;
+}
+#uncheck{
+    color:red;
+}
+#medal{
+    color: gold;
+}
+
 
 .leaderboard {
     max-width: 55em;
-    margin-right: auto;
-    margin-left: auto;
+    margin-left: 350px;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 1em;
-    padding-top: 2em;
-    background-color: red;
+    margin-top: 550px;
+    background: #000;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    border-radius:50px;
 }
 
 .description{
@@ -116,13 +149,17 @@ a:hover {
     text-align: center;
     color:#fff;
     transform: translateY(-5em);
+    width: 55em;
+    background: #000;
+    backdrop-filter: blur(15px);
+    border-radius:50px;
 }
 
 .search{
 border-radius: 5px;
 border:none;
 background-color: transparent;
-border-bottom: #0aa989 2px solid;
+border-bottom: #fff 2px solid;
 padding: -5em;
 font-size: 1em;
 color: #fff;
@@ -201,4 +238,17 @@ font-weight: 800;
         max-width: 100vw;
         overflow-x: scroll;
     }
+}
+
+.background-image{
+    position: relative;
+    align-items: end;
+    justify-content: end;
+    width: 25%;
+    left: 1380px;
+    bottom: 850px;
+}
+.background-image img{
+    height: 900px;
+    width: 470px;
 }
