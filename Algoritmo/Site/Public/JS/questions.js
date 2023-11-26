@@ -176,3 +176,10 @@ function finalizarQuiz() {
         `
     )
 }
+
+function sair() {
+    setTimeout(() => {
+        window.location = "dashboard.html";
+    }, 1000); // apenas para exibir o loading
+    alert("Voltando para a Tela de Perfil...");
+}

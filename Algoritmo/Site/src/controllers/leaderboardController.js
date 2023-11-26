@@ -1,0 +1,1 @@
+var leaderboardModel = require("../models/leaderboardModel");

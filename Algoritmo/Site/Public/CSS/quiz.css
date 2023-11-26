@@ -12,7 +12,7 @@
     font-weight: normal;
 }
 
- body {
+body {
     height: 100vh;
     display: flex;
     align-items: center;
@@ -21,14 +21,16 @@
     background: url(../Assets/Imgs/bckgquiz.jpg)no-repeat;
     background-position: center;
     background-size: cover;
-} 
+    overflow-y: hidden;
+}
 
- p{
+p {
     font-size: 14px;
     font-family: "Modern Sans'";
     color: #fff;
 }
-span{
+
+span {
     font-size: 16px;
     font-family: "Modern Sans'";
     color: #fff;
@@ -39,7 +41,7 @@ span{
     color: #fff;
     font-size: 90px;
     display: flex;
-    align-items:center;
+    align-items: center;
     justify-content: top;
 }
 
@@ -58,7 +60,7 @@ span{
 .content p {
     font-size: 16px;
     font-family: "Modern Sans'";
-    color: #fff; 
+    color: #fff;
 }
 
 button {
@@ -72,7 +74,7 @@ button {
     color: #fff;
     font-family: "Modern Sans";
     font-weight: bold;
-} 
+}
 
 .cardQuiz {
     width: 100%;
@@ -85,7 +87,10 @@ button {
     align-items: center;
     justify-content: space-evenly;
 }
-.cardQuiz p, span,h2{
+
+.cardQuiz p,
+span,
+h2 {
     font-family: "Modern Sans";
     color: #fff;
 }
@@ -117,7 +122,7 @@ button {
 .exibirAcertos {
     width: 90%;
     height: 40%;
-    background-color:transparent;
+    background-color: transparent;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -125,6 +130,7 @@ button {
     color: #fff;
     font-size: 16px;
 }
-.exibirAcertos h2{
-   font-size: 24px;
+
+.exibirAcertos h2 {
+    font-size: 24px;
 }
