@@ -7,6 +7,15 @@ function coletarQtdUsuarios() {
     return database.executar(instrucao);
 };
 
+function coletarDadosQuiz(){
+    var instrucao= 
+    `select idUsuario ID,
+    nome Usuario from usuario
+    join
+    quiz on
+    idQuiz =fkQuiz;`
+}
+
 module.exports = {
     coletarQtdUsuarios
 };
