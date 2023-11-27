@@ -9,4 +9,8 @@ router.post("/coletarQtdUsuarios", function (req, res) {
     leaderboardController.coletarQtdTotal(req, res);
 });
 
+router.post("/inserirPontuacaoUsuario", function (req, res) {
+    leaderboardController.inserirPontuacaoUsuario(req, res);
+});
+
 module.exports = router;

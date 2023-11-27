@@ -2,6 +2,7 @@ var cardQuiz = document.getElementById("cardQuiz");
 var cardQuestions = document.getElementById("cardQuestions");
 var pontuation = 0;
 var currentIndex = 1;
+var id = sessionStorage.ID_USUARIO;
 
 const listQuestions = [
     {
@@ -174,7 +175,32 @@ function finalizarQuiz() {
             </div>
             <button onclick="sair()">Voltar</button>
         `
-    )
+    ),
+
+        fetch(`/leaderboard/inserirPontuacaoUsuario`,
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    idUsuario: id,
+                    pontuacao: pontuation
+                })
+            })
+
+            .then(res => {
+                if (!res.ok) {
+                    throw new Error(`Erro na solicitação: ${res.statusText}`);
+                }
+                return res.json();
+            })
+            .then(res => {
+            console.log("Deu Certo!")
+            })
+            .catch(error => {
+                console.error("Erro no lado do cliente:", error);
+            });
 }
 
 function sair() {
