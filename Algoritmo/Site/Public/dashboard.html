@@ -64,17 +64,17 @@
         <div class="card">
             <i id="check" class="fi fi-ss-social-network"></i>
             <span>Quantidade de Usuários Acima da Média</span>
-            <p>#</p>
+            <p id="qtd_UsuariosAcimaMedia"> #</p>
         </div>
         <div class="card">
             <i id="uncheck" class="fi fi-ss-hand"></i>
             <span>Quantidade de Usuários Abaixo da Média</span>
-            <p>#</p>
+            <p id="qtd_UsuariosAbaixoMedia">#</p>
         </div>
         <div class="card">
             <i id="medal" class="fi fi-sr-badge"></i>
             <span>Usuários com 100% de Taxa de Acerto</span>
-            <p>#</p>
+            <p id="qtd_UsuariosTaxaAcerto">#</p>
         </div>
     </div>
 
@@ -176,6 +176,9 @@
 <script>
     userName.innerHTML = ` Olá,  ` + sessionStorage.NOME_USUARIO;
     var qtdUsuarios = document.getElementById("qtd_Usuarios");
+    var qtdMediaAlta = document.getElementById("qtd_UsuariosAcimaMedia");
+    var qtdMediaBaixa = document.getElementById("qtd_UsuariosAbaixoMedia");
+    var qtdAcertoTotal = document.getElementById("qtd_UsuariosTaxaAcerto");
     var id = sessionStorage.ID_USUARIO;
     var qtdTotal = 0;
     console.log(id);
@@ -183,7 +186,7 @@
     setInterval(gerarGraficos, 3000);
     function gerarGraficos() {
 
-        fetch(`/leaderboard/coletarQtdUsuarios?idUsuario=${id}`,
+        fetch(`/leaderboard/coletarQtdUsuarios`,
     {
                 method: "POST",
                 headers: {
@@ -201,6 +204,93 @@
                     qtdTotal = res[0].usuariosTotal;
 
                     qtdUsuarios.innerHTML = `
+            ${qtdTotal}
+        `;
+                })
+                .catch(error => {
+                    console.error("Erro no lado do cliente:", error);
+                });
+    }
+
+    setInterval(exibirMediaAlta, 3000);
+    function exibirMediaAlta() {
+
+        fetch(`/leaderboard/mediaAlta/${id}`,
+    {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                }
+            })
+    
+    .then(res => {
+                if (!res.ok) {
+                    throw new Error(`Erro na solicitação: ${res.statusText}`);
+                }
+                return res.json();
+            })
+                .then(res => {
+                    qtdTotal = res[0].QtdUsuarios;
+
+                    qtd_UsuariosAcimaMedia.innerHTML = `
+            ${qtdTotal}
+        `;
+                })
+                .catch(error => {
+                    console.error("Erro no lado do cliente:", error);
+                });
+    }
+
+    setInterval(exibirMediaBaixa, 3000);
+    function exibirMediaBaixa() {
+
+        fetch(`/leaderboard/mediaBaixa/${id}`,
+    {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                }
+            })
+    
+    .then(res => {
+                if (!res.ok) {
+                    throw new Error(`Erro na solicitação: ${res.statusText}`);
+                }
+                return res.json();
+            })
+                .then(res => {
+                    qtdTotal = res[0].QtdUsuarios;
+
+                    qtd_UsuariosAbaixoMedia.innerHTML = `
+            ${qtdTotal}
+        `;
+                })
+                .catch(error => {
+                    console.error("Erro no lado do cliente:", error);
+                });
+    }
+
+    setInterval(exibirTaxaAcertoTotal, 3000);
+    function exibirTaxaAcertoTotal() {
+
+        fetch(`/leaderboard/taxaAcertoTotal/${id}`,
+    {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                }
+            })
+    
+    .then(res => {
+                if (!res.ok) {
+                    throw new Error(`Erro na solicitação: ${res.statusText}`);
+                }
+                return res.json();
+            })
+                .then(res => {
+                    qtdTotal = res[0].QtdUsuarios;
+
+                    qtd_UsuariosTaxaAcerto.innerHTML = `
             ${qtdTotal}
         `;
                 })
