@@ -25,4 +25,8 @@ router.post("/taxaAcertoTotal/:idUsuario", function (req, res) {
     leaderboardController.taxaAcertoTotal(req, res);
 });
 
+router.post("/mostrarRanking/:idUsuario", function (req, res) {
+    leaderboardController.mostrarRanking(req, res);
+});
+
 module.exports = router;

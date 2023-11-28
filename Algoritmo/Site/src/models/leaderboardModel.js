@@ -50,11 +50,23 @@ function taxaAcertoTotal() {
     return database.executar(taxadeAcerto);
 };
 
+function mostrarRanking() {
+    var ranking = `select nome Nome,
+    quiz.pontuacao "Pontuação" from usuario
+    join
+    quiz on
+    idUsuario = fkUsuarioQuiz
+    where pontuacao order by pontuacao desc limit 5;`
+    console.log("Executando a instrução de mostrar usuários no ranking: \n " + (database.executar(ranking)));
+    return database.executar(ranking);
+}
+
 
 module.exports = {
     coletarQtdUsuarios,
     inserirPontuacaoUsuario,
     mediaAlta,
     mediaBaixa,
-    taxaAcertoTotal
+    taxaAcertoTotal,
+    mostrarRanking
 };

@@ -25,7 +25,7 @@ function inserirPontuacaoUsuario(req,res){
         console.error("Erro ao processar a solicitação:", error);
         res.status(500).json({ error: "Erro interno do servidor" });
     });
-}
+};
 
 function mediaAlta(req,res){
     var idUsuario = req.params.idUsuario;
@@ -39,7 +39,7 @@ function mediaAlta(req,res){
         res.status(500).json({ error: "Erro interno do servidor" });
     });
     
-}
+};
 
 function mediaBaixa(req,res){
     var idUsuario = req.params.idUsuario;
@@ -53,7 +53,7 @@ function mediaBaixa(req,res){
         res.status(500).json({ error: "Erro interno do servidor" });
     });
     
-}
+};
 
 function taxaAcertoTotal(req,res){
     var idUsuario = req.params.idUsuario;
@@ -67,11 +67,27 @@ function taxaAcertoTotal(req,res){
         res.status(500).json({ error: "Erro interno do servidor" });
     });
     
+};
+
+function mostrarRanking(req,res){
+    var idUsuario = req.params.idUsuario;
+    leaderboardModel.mostrarRanking(idUsuario)
+    .then(result => {
+        console.log(result)
+        res.status(200).json(result);
+    })
+    .catch(error => {
+        console.error("Erro ao processar a solicitação:", error);
+        res.status(500).json({ error: "Erro interno do servidor" });
+    });
+    
 }
+
 module.exports = {
     coletarQtdTotal,
     inserirPontuacaoUsuario,
     mediaAlta,
     mediaBaixa,
-    taxaAcertoTotal
+    taxaAcertoTotal,
+    mostrarRanking
 }

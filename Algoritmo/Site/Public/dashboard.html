@@ -102,47 +102,47 @@
                     <tr>
                         <td id="winner"> 1</td>
                         <td>
-                            <p>José Braga</p>
+                            <p id="primeiroRank">José Braga</p>
 
                         </td>
-                        <td>12</td>
-                        <td>100%</td>
+                        <td id="primeiroRankPont">12</td>
+                        <td id="primeiroPorct">100%</td>
                     </tr>
 
                     <tr>
                         <td id="runner-up">2</td>
                         <td>
-                            <p>Maria Simons</p>
+                            <p id="segundoRank">Maria Simons</p>
                         </td>
-                        <td>10</td>
-                        <td>83%</td>
+                        <td id="segundoRankPont">10</td>
+                        <td id="segundoPorct">83%</td>
                     </tr>
 
                     <tr>
                         <td id="second-runner-up">3</td>
                         <td>
-                            <p>Antônio Ferreira</p>
+                            <p id="terceiroRank">Antônio Ferreira</p>
                         </td>
-                        <td>9</td>
-                        <td>75%</td>
+                        <td id="terceiroRankPont">9</td>
+                        <td id="terceiroPorct">75%</td>
                     </tr>
 
                     <tr>
                         <td>4</td>
                         <td>
-                            <p>Ferreira da Silva</p>
+                            <p id="quartoRank">Ferreira da Silva</p>
                         </td>
-                        <td>8</td>
-                        <td>67%</td>
+                        <td id="quartoRankPont">8</td>
+                        <td id="quartoPorct">67%</td>
                     </tr>
 
                     <tr>
                         <td>5</td>
                         <td>
-                            <p>Tom Jerry</p>
+                            <p id="quintoRank">Tom Jerry</p>
                         </td>
-                        <td>8</td>
-                        <td>67%</td>
+                        <td id="quintoRankPont">8</td>
+                        <td id="quintoPorct">67%</td>
                     </tr>
                 </tbody>
             </table>
@@ -179,6 +179,11 @@
     var qtdMediaAlta = document.getElementById("qtd_UsuariosAcimaMedia");
     var qtdMediaBaixa = document.getElementById("qtd_UsuariosAbaixoMedia");
     var qtdAcertoTotal = document.getElementById("qtd_UsuariosTaxaAcerto");
+    var primeroColocado = 0;
+    var segundoColocado = 0;
+    var terceiroColocado = 0;
+    var quartoColocado = 0;
+    var quintoColocado = 0;
     var id = sessionStorage.ID_USUARIO;
     var qtdTotal = 0;
     console.log(id);
@@ -187,116 +192,176 @@
     function gerarGraficos() {
 
         fetch(`/leaderboard/coletarQtdUsuarios`,
-    {
+            {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                 }
             })
-    
-    .then(res => {
+
+            .then(res => {
                 if (!res.ok) {
                     throw new Error(`Erro na solicitação: ${res.statusText}`);
                 }
                 return res.json();
             })
-                .then(res => {
-                    qtdTotal = res[0].usuariosTotal;
+            .then(res => {
+                qtdTotal = res[0].usuariosTotal;
 
-                    qtdUsuarios.innerHTML = `
+                qtdUsuarios.innerHTML = `
             ${qtdTotal}
         `;
-                })
-                .catch(error => {
-                    console.error("Erro no lado do cliente:", error);
-                });
+            })
+            .catch(error => {
+                console.error("Erro no lado do cliente:", error);
+            });
     }
 
     setInterval(exibirMediaAlta, 3000);
     function exibirMediaAlta() {
 
         fetch(`/leaderboard/mediaAlta/${id}`,
-    {
+            {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                 }
             })
-    
-    .then(res => {
+
+            .then(res => {
                 if (!res.ok) {
                     throw new Error(`Erro na solicitação: ${res.statusText}`);
                 }
                 return res.json();
             })
-                .then(res => {
-                    qtdTotal = res[0].QtdUsuarios;
+            .then(res => {
+                qtdTotal = res[0].QtdUsuarios;
 
-                    qtd_UsuariosAcimaMedia.innerHTML = `
+                qtd_UsuariosAcimaMedia.innerHTML = `
             ${qtdTotal}
         `;
-                })
-                .catch(error => {
-                    console.error("Erro no lado do cliente:", error);
-                });
+            })
+            .catch(error => {
+                console.error("Erro no lado do cliente:", error);
+            });
     }
 
     setInterval(exibirMediaBaixa, 3000);
     function exibirMediaBaixa() {
 
         fetch(`/leaderboard/mediaBaixa/${id}`,
-    {
+            {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                 }
             })
-    
-    .then(res => {
+
+            .then(res => {
                 if (!res.ok) {
                     throw new Error(`Erro na solicitação: ${res.statusText}`);
                 }
                 return res.json();
             })
-                .then(res => {
-                    qtdTotal = res[0].QtdUsuarios;
+            .then(res => {
+                qtdTotal = res[0].QtdUsuarios;
 
-                    qtd_UsuariosAbaixoMedia.innerHTML = `
+                qtd_UsuariosAbaixoMedia.innerHTML = `
             ${qtdTotal}
         `;
-                })
-                .catch(error => {
-                    console.error("Erro no lado do cliente:", error);
-                });
+            })
+            .catch(error => {
+                console.error("Erro no lado do cliente:", error);
+            });
     }
 
     setInterval(exibirTaxaAcertoTotal, 3000);
     function exibirTaxaAcertoTotal() {
 
         fetch(`/leaderboard/taxaAcertoTotal/${id}`,
-    {
+            {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                 }
             })
-    
-    .then(res => {
+
+            .then(res => {
                 if (!res.ok) {
                     throw new Error(`Erro na solicitação: ${res.statusText}`);
                 }
                 return res.json();
             })
-                .then(res => {
-                    qtdTotal = res[0].QtdUsuarios;
+            .then(res => {
+                qtdTotal = res[0].QtdUsuarios;
 
-                    qtd_UsuariosTaxaAcerto.innerHTML = `
+                qtd_UsuariosTaxaAcerto.innerHTML = `
             ${qtdTotal}
         `;
-                })
-                .catch(error => {
-                    console.error("Erro no lado do cliente:", error);
-                });
+            })
+            .catch(error => {
+                console.error("Erro no lado do cliente:", error);
+            });
     }
+
+
+    setInterval(mostrarRanking, 3000);
+    function mostrarRanking() {
+
+        fetch(`/leaderboard/mostrarRanking/${id}`,
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                }
+            })
+
+            .then(res => {
+                if (!res.ok) {
+                    throw new Error(`Erro na solicitação: ${res.statusText}`);
+                }
+                return res.json();
+            })
+            .then(res => {
+                console.log(res)
+                //Pega o objeto inteiro
+                primeiroColocado = res[0];
+                segundoColocado = res[1];
+                terceiroColocado = res[2];
+                quartoColocado = res[3];
+                quintoColocado = res[4];
+
+                // Pega a propriedade nome dentro do objeto
+                primeiroRank.innerHTML = primeiroColocado.Nome;
+                segundoRank.innerHTML = segundoColocado.Nome;
+                terceiroRank.innerHTML = terceiroColocado.Nome;
+                quartoRank.innerHTML = quartoColocado.Nome;
+                quintoRank.innerHTML = quintoColocado.Nome;
+
+                // Pega a propriedade Pontuação dentro do objeto
+                primeiroRankPont.innerHTML = primeiroColocado.Pontuação;
+                segundoRankPont.innerHTML = segundoColocado.Pontuação;
+                terceiroRankPont.innerHTML = terceiroColocado.Pontuação;
+                quartoRankPont.innerHTML = quartoColocado.Pontuação;
+                quintoRankPont.innerHTML = quintoColocado.Pontuação;
+
+                var percentualPrimeiro = ((primeiroColocado.Pontuação /12) *100).toFixed(2);
+                var percentualSegundo = ((segundoColocado.Pontuação /12) *100).toFixed(2);
+                var percentualTerceiro = ((terceiroColocado.Pontuação /12) *100).toFixed(2);
+                var percentualQuarto =((quartoColocado.Pontuação /12) *100).toFixed(2);
+                var percentualQuinto =((quintoColocado.Pontuação /12) *100).toFixed(2);
+
+                //Pega a pontuação do usuario e trasnforma em porcentagem
+                primeiroPorct.innerHTML =`${percentualPrimeiro}%`;
+                segundoPorct.innerHTML =`${percentualSegundo}%`;
+                terceiroPorct.innerHTML =`${percentualTerceiro}%`;
+                quartoPorct.innerHTML =`${percentualQuarto}%`;
+                quintoPorct.innerHTML =`${percentualQuinto}%`;
+            })
+            .catch(error => {
+                console.error("Erro no lado do cliente:", error);
+            });
+    }
+    mostrarRanking()
 
 </script>
