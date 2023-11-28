@@ -42,48 +42,39 @@ select count(idUsuario) usuariosTotal from usuario;
 -- Exibindo a Quantidade de Usuários que estão acima da média
 
 select
-count(idUsuario) QtdUsuarios,
-usuario.idUsuario  ID,
-usuario.nome  Nome
+count(idUsuario) QtdUsuarios
 from usuario
 join quiz
  on usuario.idUsuario = quiz.fkUsuarioQuiz
-where quiz.pontuacao > 6
-group by usuario.idUsuario, usuario.nome;
+where quiz.pontuacao > 6;
 
 -- Exibindo a Quantidade de Usuários que estão abaixo da média
 
 select
-count(idUsuario) QtdUsuarios,
-usuario.idUsuario  ID,
-usuario.nome  Nome
+count(idUsuario) QtdUsuarios
 from usuario
 join quiz
  on usuario.idUsuario = quiz.fkUsuarioQuiz
-where quiz.pontuacao < 6
-group by usuario.idUsuario, usuario.nome;
+where quiz.pontuacao < 6;
  
  
 -- Exibindo os Usuários com a Pontuação Máxima
 
 select
-count(idUsuario) QtdUsuarios,
-usuario.idUsuario  ID,
-usuario.nome  Nome
+count(idUsuario) QtdUsuarios
 from usuario
 join quiz
  on usuario.idUsuario = quiz.fkUsuarioQuiz
-where quiz.pontuacao = 12
-group by usuario.idUsuario, usuario.nome;
+where quiz.pontuacao = 12;
 
 
 -- Exibindo o a pontuação por ordem decrescente de todos cadastrados (Ranking)
 
-select idUsuario ID,
+select 
 nome Nome,
 quiz.pontuacao "Pontuação" from usuario
 join
 quiz on
 idUsuario = fkUsuarioQuiz
-where pontuacao order by pontuacao desc;
+where pontuacao order by pontuacao desc limit 5;
 
