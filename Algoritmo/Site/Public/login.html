@@ -48,10 +48,12 @@
     function entrar() {
         var emailVar = userEmail.value;
         var senhaVar = userPassword.value;
-        if (emailVar == "" || senhaVar == "") {
-            alert("Preencha todos os campos");
+        if (emailVar == "" && senhaVar == "") {
+            alert("Preencha todos os campos para fazer Login !");
             return false;
-        } else {
+        }
+        // else if (emailVar && senhaVar == sessionStorage) {alert("Login ou Senha não encotrados  ! Por favor verifique corretamente todos os campos") } 
+        else {
 
             console.log("FORM LOGIN: ", emailVar);
             console.log("FORM SENHA: ", senhaVar);

@@ -29,4 +29,8 @@ router.post("/mostrarRanking/:idUsuario", function (req, res) {
     leaderboardController.mostrarRanking(req, res);
 });
 
+router.post("/inserirSugestao", function (req, res) {
+    leaderboardController.inserirSugestao(req, res);
+});
+
 module.exports = router;

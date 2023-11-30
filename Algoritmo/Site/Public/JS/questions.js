@@ -14,7 +14,7 @@ const listQuestions = [
         ],
     },
     {
-        question: "Qual é a idade de Ellie em the Last of us Part I ?",
+        question: "Qual é a idade de Ellie em The Last of us Part I ?",
         answers: [
             { option: "12 Anos", correct: false },
             { option: "13 Anos", correct: false },
@@ -30,7 +30,7 @@ const listQuestions = [
         ],
     },
     {
-        question: "Onde fica a base dos vagalumes ?",
+        question: "Onde fica a base dos vagalumes  ?",
         answers: [
             { option: "Seatle", correct: false },
             { option: "Boston", correct: true },
@@ -38,7 +38,7 @@ const listQuestions = [
         ],
     },
     {
-        question: "Qual é a idade de Joel ?",
+        question: "Qual é a idade de Joel no The Last of Us part II ?",
         answers: [
             { option: "56 Anos", correct: true },
             { option: "53 Anos", correct: false },
@@ -54,7 +54,7 @@ const listQuestions = [
         ],
     },
     {
-        question: "Quem interpretou Ellie no live action ?",
+        question: "Quem interpretou Ellie na série live action ?",
         answers: [
             { option: "Ashley Johnson", correct: false },
             { option: "Bella Ramsey", correct: true },
@@ -78,7 +78,7 @@ const listQuestions = [
         ],
     },
     {
-        question: "Qual o gênero do Jogo ?",
+        question: "Qual o gênero principal do Jogo ?",
         answers: [
             { option: "Ação", correct: false },
             { option: "Terror", correct: false },
@@ -171,7 +171,7 @@ function finalizarQuiz() {
             <h2>Boa Você Completou o Quiz</h2>
             <p><br>Seu total de acertos foi:</p>
             <div class="exibirAcertos">
-                ${pontuation}
+                ${pontuation}/12
             </div>
             <button onclick="sair()">Voltar</button>
         `

@@ -40,10 +40,6 @@
                     <i class="fi fi-sr-envelope"></i>
                     <span class="nav-item">Sugestões</span>
                 </a></li>
-            <li><a href="#">
-                    <i class="fi fi-br-chart-histogram"></i>
-                    <span class="nav-item">Analytics</span>
-                </a></li>
             <li><a href="quiz.html">
                     <i class="fi fi-br-list-check"></i>
                     <span class="nav-item">Quiz</span>
@@ -59,22 +55,22 @@
         <div class="card">
             <i class="fi fi-sr-user"></i>
             <span>Quantidade de Usuários Cadastrados</span>
-            <p id="qtd_Usuarios">#</p>
+            <p id="qtd_Usuarios"></p>
         </div>
         <div class="card">
             <i id="check" class="fi fi-ss-social-network"></i>
             <span>Quantidade de Usuários Acima da Média</span>
-            <p id="qtd_UsuariosAcimaMedia"> #</p>
+            <p id="qtd_UsuariosAcimaMedia"></p>
         </div>
         <div class="card">
             <i id="uncheck" class="fi fi-ss-hand"></i>
             <span>Quantidade de Usuários Abaixo da Média</span>
-            <p id="qtd_UsuariosAbaixoMedia">#</p>
+            <p id="qtd_UsuariosAbaixoMedia"></p>
         </div>
         <div class="card">
             <i id="medal" class="fi fi-sr-badge"></i>
             <span>Usuários com 100% de Taxa de Acerto</span>
-            <p id="qtd_UsuariosTaxaAcerto">#</p>
+            <p id="qtd_UsuariosTaxaAcerto"></p>
         </div>
     </div>
 
@@ -82,7 +78,7 @@
         <div class="description"><br>
             <h3>Ranking</h3><br>
             <p>Veja o Ranking dos Usuarios que acessaram o site</p><br>
-            <input class="search" placeholder="Pesquisar" id="search" oninput="search()">
+            <input class="search" placeholder="Pesquisar" id="search" onkeyup="search()">
             <table>
                 <thead>
                     <tr>

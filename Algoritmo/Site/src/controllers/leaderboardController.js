@@ -81,7 +81,27 @@ function mostrarRanking(req,res){
         res.status(500).json({ error: "Erro interno do servidor" });
     });
     
-}
+};
+
+function inserirSugestao(req,res){
+    var fkUsuarioSugest = req.body.idUsuario;
+    var nome = req.body.nome;
+    var email= req.body.email;
+    var assunto = req.body.assunto;
+    var descricao = req.body.descricao;
+    
+    leaderboardModel.inserirSugestao(nome,email,assunto,descricao, fkUsuarioSugest)
+    .then(result => {
+        console.log(result)
+        res.status(200).json(result);
+    })
+    .catch(error => {
+        console.error("Erro ao processar a solicitação:", error);
+        res.status(500).json({ error: "Erro interno do servidor" });
+    });
+    
+};
+
 
 module.exports = {
     coletarQtdTotal,
@@ -89,5 +109,6 @@ module.exports = {
     mediaAlta,
     mediaBaixa,
     taxaAcertoTotal,
-    mostrarRanking
+    mostrarRanking,
+    inserirSugestao
 }

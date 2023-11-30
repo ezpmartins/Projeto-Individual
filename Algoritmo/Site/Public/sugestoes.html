@@ -15,10 +15,10 @@
     <div class="contactForm">
       <h1 class="sub-heading">Mande sua Sugestão !</h1><br>
       <p>Sinta-se à vontade para mandar seu feedback sugestões ou críticas.</p><br><br>
-      <input type="text" class="input" placeholder="Seu nome">
-      <input type="text" class="input" placeholder="Seu email">
-      <input type="text" class="input" placeholder="Assunto">
-      <textarea class="input" cols="30" rows="5" placeholder="Sua mensagem"></textarea>
+      <input id="name_UserSugest" type="text" class="input" placeholder="Seu nome">
+      <input id="email_UserSugest" type="text" class="input" placeholder="Seu email">
+      <input id="assunto_User" type="text" class="input" placeholder="Assunto">
+      <textarea id="descricao_User" class="input" cols="30" rows="5" placeholder="Sua mensagem"></textarea>
       <button onclick="enviarMensagem()">Enviar Mensagem</button>
     </div>
   </div>
@@ -28,3 +28,47 @@
 </body>
 
 </html>
+<script>
+
+  function enviarMensagem() {
+    var fkUsuario = sessionStorage.ID_USUARIO;
+    var nome = name_UserSugest.value;
+    var email = email_UserSugest.value;
+    var assunto = assunto_User.value;
+    var descricao = descricao_User.value;
+
+    fetch(`/leaderboard/inserirSugestao`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          nome: nome,
+          email: email,
+          assunto: assunto,
+          descricao: descricao,
+          idUsuario: fkUsuario
+        })
+      })
+
+      .then(res => {
+        if (!res.ok) {
+          throw new Error(`Erro na solicitação: ${res.statusText}`);
+        }
+        else {
+          alert("Sua Sugestão foi Enviada com Sucesso ! Muito Obrigado !")
+          setTimeout(() => {
+            window.location = "dashboard.html";
+          }, 1000);
+        }
+        return res.json();
+      })
+      .then(res => {
+        console.log("Deu Certo!")
+      })
+      .catch(error => {
+        console.error("Erro no lado do cliente:", error);
+      });
+  }
+</script>

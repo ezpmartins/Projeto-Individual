@@ -21,7 +21,7 @@ function mediaAlta() {
         from usuario
         join quiz
          on usuario.idUsuario = quiz.fkUsuarioQuiz
-        where quiz.pontuacao > 6;`
+        where quiz.pontuacao > 5;`
     console.log("Executando a instrução de usuarios acima da média: \n " + (database.executar(MediaAlta)));
     return database.executar(MediaAlta);
 };
@@ -61,6 +61,12 @@ function mostrarRanking() {
     return database.executar(ranking);
 }
 
+function inserirSugestao(nome,email,assunto,descricao,fkUsuarioSugest){
+    var sugestao = `insert into sugestao(idSugestao,nome,email,assunto, descricao,fkUsuarioSugest) values(${fkUsuarioSugest},"${nome}","${email}","${assunto}","${descricao}",${fkUsuarioSugest});`
+    console.log("Executando a instrução de mostrar usuários no ranking: \n " + sugestao);
+    return database.executar(sugestao);
+}
+
 
 module.exports = {
     coletarQtdUsuarios,
@@ -68,5 +74,6 @@ module.exports = {
     mediaAlta,
     mediaBaixa,
     taxaAcertoTotal,
-    mostrarRanking
+    mostrarRanking,
+    inserirSugestao
 };

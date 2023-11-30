@@ -56,7 +56,7 @@
 
 <script>
   function cadastrar() {
-    //   aguardar();
+  
 
     //Recupere o valor da nova input pelo nome do id
     // Agora vá para o método fetch logo abaixo
@@ -65,18 +65,16 @@
     var senhaVar = userPassword.value;
     var confirmacaoSenhaVar = userCheckPassword.value;
     if (
-      nomeVar == "" ||
-      emailVar == "" ||
-      senhaVar == "" ||
+      nomeVar == "" &&
+      emailVar == "" &&
+      senhaVar == "" &&
       confirmacaoSenhaVar == ""
     ) {
-      alert("Mensagem de erro para todos os campos em branco");
-
-    } else if (nomeVar.length < 1) {
+      alert("Por Favor Prencha Todos os Campos");
+    } else if (nomeVar.length < 3) {
       alert("Seu Nome não valido, por favor preencha o campo corretamente!");
-
     } else if (emailVar.indexOf('@') == -1 || emailVar.indexOf('.') == -1) {
-      alert("Seu email está invalido, por favor verifique corretamente !");
+      alert("Seu email está invalido, por favor verifique corretamente ! Insira um @, um domínio e '.' ");
     } else if (senhaVar.length < 6) {
       alert("Sua senha está invalido, por favor verifique corretamente !");
     } else if (confirmacaoSenhaVar != senhaVar) {
