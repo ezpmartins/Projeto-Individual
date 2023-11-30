@@ -112,6 +112,7 @@ a:hover {
     align-items: space-between;
     margin-left: 330px;
     padding-top: 10px;
+    gap: 30px;
 }
 
 .card{
