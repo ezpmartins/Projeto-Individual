@@ -56,7 +56,7 @@ function mostrarRanking() {
     join
     quiz on
     idUsuario = fkUsuarioQuiz
-    where pontuacao order by pontuacao desc limit 5;`
+    where pontuacao order by pontuacao desc limit 10;`
     console.log("Executando a instrução de mostrar usuários no ranking: \n " + (database.executar(ranking)));
     return database.executar(ranking);
 }

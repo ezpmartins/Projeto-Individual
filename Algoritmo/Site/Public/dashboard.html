@@ -44,7 +44,7 @@
                     <i class="fi fi-br-list-check"></i>
                     <span class="nav-item">Quiz</span>
                 </a></li>
-            <li><a href="index.html" class="logout">
+            <li><a href="index.html" class="logout" target="_blank">
                     <i class="fi fi-bs-sign-out-alt"></i>
                     <span class="nav-item">Sair</span>
                 </a></li>
@@ -69,7 +69,7 @@
         </div>
         <div class="card">
             <i id="medal" class="fi fi-sr-badge"></i>
-            <span>Usuários com 100% de Taxa de Acerto</span>
+            <span>Usuários com 100% de Taxa de Acerto no Quiz</span>
             <p id="qtd_UsuariosTaxaAcerto"></p>
         </div>
     </div>
@@ -98,56 +98,103 @@
                     <tr>
                         <td id="winner"> 1</td>
                         <td>
-                            <p id="primeiroRank">José Braga</p>
+                            <p id="primeiroRank"></p>
 
                         </td>
-                        <td id="primeiroRankPont">12</td>
-                        <td id="primeiroPorct">100%</td>
+                        <td id="primeiroRankPont"></td>
+                        <td id="primeiroPorct"></td>
                     </tr>
 
                     <tr>
                         <td id="runner-up">2</td>
                         <td>
-                            <p id="segundoRank">Maria Simons</p>
+                            <p id="segundoRank"></p>
                         </td>
-                        <td id="segundoRankPont">10</td>
-                        <td id="segundoPorct">83%</td>
+                        <td id="segundoRankPont"></td>
+                        <td id="segundoPorct"></td>
                     </tr>
 
                     <tr>
                         <td id="second-runner-up">3</td>
                         <td>
-                            <p id="terceiroRank">Antônio Ferreira</p>
+                            <p id="terceiroRank"></p>
                         </td>
-                        <td id="terceiroRankPont">9</td>
-                        <td id="terceiroPorct">75%</td>
+                        <td id="terceiroRankPont"></td>
+                        <td id="terceiroPorct"></td>
                     </tr>
 
                     <tr>
                         <td>4</td>
                         <td>
-                            <p id="quartoRank">Ferreira da Silva</p>
+                            <p id="quartoRank"></p>
                         </td>
-                        <td id="quartoRankPont">8</td>
-                        <td id="quartoPorct">67%</td>
+                        <td id="quartoRankPont"></td>
+                        <td id="quartoPorct"></td>
                     </tr>
 
                     <tr>
                         <td>5</td>
                         <td>
-                            <p id="quintoRank">Tom Jerry</p>
+                            <p id="quintoRank"></p>
                         </td>
-                        <td id="quintoRankPont">8</td>
-                        <td id="quintoPorct">67%</td>
+                        <td id="quintoRankPont"></td>
+                        <td id="quintoPorct"></td>
                     </tr>
+
+
+                    <tr>
+                        <td>6</td>
+                        <td>
+                            <p id="sextoRank"></p>
+                        </td>
+                        <td id="sextoRankPont"></td>
+                        <td id="sextoPorct"></td>
+                    </tr>
+
+
+                    <tr>
+                        <td>7</td>
+                        <td>
+                            <p id="setimoRank"></p>
+                        </td>
+                        <td id="setimoRankPont"></td>
+                        <td id="setimoPorct"></td>
+                    </tr>
+
+
+                    <tr>
+                        <td>8</td>
+                        <td>
+                            <p id="oitavoRank"></p>
+                        </td>
+                        <td id="oitavoRankPont"></td>
+                        <td id="oitavoPorct"></td>
+                    </tr>
+
+
+                    <tr>
+                        <td>9</td>
+                        <td>
+                            <p id="nonoRank"></p>
+                        </td>
+                        <td id="nonoRankPont"></td>
+                        <td id="nonoPorct"></td>
+                    </tr>
+
+
+                    <tr>
+                        <td>10</td>
+                        <td>
+                            <p id="decimoRank"></p>
+                        </td>
+                        <td id="decimoRankPont"></td>
+                        <td id="decimoPorct"></td>
+                    </tr>
+
                 </tbody>
             </table>
         </div>
     </div>
-    <div class="background-image">
-        <img src="Assets/Imgs/imagem_2023-11-25_180532540-removebg-preview.png" alt="Borboleta-Ellie">
-    </div>
-
 </body>
 
 </html>
@@ -180,6 +227,11 @@
     var terceiroColocado = 0;
     var quartoColocado = 0;
     var quintoColocado = 0;
+    var sextoColocado = 0;
+    var setimoColocado = 0;
+    var oitavoColocado = 0;
+    var nonoColocado = 0;
+    var decimoColocado = 0;
     var id = sessionStorage.ID_USUARIO;
     var qtdTotal = 0;
     console.log(id);
@@ -326,6 +378,11 @@
                 terceiroColocado = res[2];
                 quartoColocado = res[3];
                 quintoColocado = res[4];
+                sextoColocado = res[5];
+                setimoColocado = res[6];
+                oitavoColocado = res[7];
+                nonoColocado = res[8];
+                decimoColocado = res[9];
 
                 // Pega a propriedade nome dentro do objeto
                 primeiroRank.innerHTML = primeiroColocado.Nome;
@@ -333,6 +390,11 @@
                 terceiroRank.innerHTML = terceiroColocado.Nome;
                 quartoRank.innerHTML = quartoColocado.Nome;
                 quintoRank.innerHTML = quintoColocado.Nome;
+                sextoRank.innerHTML = sextoColocado.Nome;
+                setimoRank.innerHTML = setimoColocado.Nome;
+                oitavoRank.innerHTML = oitavoColocado.Nome;
+                nonoRank.innerHTML = nonoColocado.Nome;
+                decimoRank.innerHTML = decimoColocado.Nome;
 
                 // Pega a propriedade Pontuação dentro do objeto
                 primeiroRankPont.innerHTML = primeiroColocado.Pontuação;
@@ -340,19 +402,35 @@
                 terceiroRankPont.innerHTML = terceiroColocado.Pontuação;
                 quartoRankPont.innerHTML = quartoColocado.Pontuação;
                 quintoRankPont.innerHTML = quintoColocado.Pontuação;
+                sextoRankPont.innerHTML = sextoColocado.Pontuação;
+                setimoRankPont.innerHTML = setimoColocado.Pontuação;
+                oitavoRankPont.innerHTML = oitavoColocado.Pontuação;
+                nonoRankPont.innerHTML = nonoColocado.Pontuação;
+                decimoRankPont.innerHTML = decimoColocado.Pontuação;
 
-                var percentualPrimeiro = ((primeiroColocado.Pontuação /12) *100).toFixed(2);
-                var percentualSegundo = ((segundoColocado.Pontuação /12) *100).toFixed(2);
-                var percentualTerceiro = ((terceiroColocado.Pontuação /12) *100).toFixed(2);
-                var percentualQuarto =((quartoColocado.Pontuação /12) *100).toFixed(2);
-                var percentualQuinto =((quintoColocado.Pontuação /12) *100).toFixed(2);
+                var percentualPrimeiro = ((primeiroColocado.Pontuação / 12) * 100).toFixed(2);
+                var percentualSegundo = ((segundoColocado.Pontuação / 12) * 100).toFixed(2);
+                var percentualTerceiro = ((terceiroColocado.Pontuação / 12) * 100).toFixed(2);
+                var percentualQuarto = ((quartoColocado.Pontuação / 12) * 100).toFixed(2);
+                var percentualQuinto = ((quintoColocado.Pontuação / 12) * 100).toFixed(2);
+                var percentualSexto = ((sextoColocado.Pontuação / 12) * 100).toFixed(2);
+                var percentualSetimo= ((setimoColocado.Pontuação / 12) * 100).toFixed(2);
+                var percentualOitavo = ((oitavoColocado.Pontuação / 12) * 100).toFixed(2);
+                var percentualNono = ((nonoColocado.Pontuação / 12) * 100).toFixed(2);
+                var percentualDecimo = ((decimoColocado.Pontuação / 12) * 100).toFixed(2);
 
                 //Pega a pontuação do usuario e trasnforma em porcentagem
-                primeiroPorct.innerHTML =`${percentualPrimeiro}%`;
-                segundoPorct.innerHTML =`${percentualSegundo}%`;
-                terceiroPorct.innerHTML =`${percentualTerceiro}%`;
-                quartoPorct.innerHTML =`${percentualQuarto}%`;
-                quintoPorct.innerHTML =`${percentualQuinto}%`;
+                primeiroPorct.innerHTML = `${percentualPrimeiro}%`;
+                segundoPorct.innerHTML = `${percentualSegundo}%`;
+                terceiroPorct.innerHTML = `${percentualTerceiro}%`;
+                quartoPorct.innerHTML = `${percentualQuarto}%`;
+                quintoPorct.innerHTML = `${percentualQuinto}%`;
+                sextoPorct.innerHTML= `${percentualSexto}%`;
+                setimoPorct.innerHTML= `${percentualSetimo}%`;
+                oitavoPorct.innerHTML= `${percentualOitavo}%`;
+                nonoPorct.innerHTML= `${percentualNono}%`;
+                decimoPorct.innerHTML = `${percentualDecimo}%`;
+                
             })
             .catch(error => {
                 console.error("Erro no lado do cliente:", error);
